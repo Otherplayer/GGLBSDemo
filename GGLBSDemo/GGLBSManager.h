@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+@protocol GGLBSManagerDelegate;
 @interface GGLBSManager : CLLocationManager<CLLocationManagerDelegate>
 
 + (instancetype)sharedManager;
@@ -16,6 +17,14 @@
 @property (nonatomic, assign) CGFloat minSpeed;     //最小速度
 @property (nonatomic, assign) CGFloat minFilter;    //最小范围
 @property (nonatomic, assign) CGFloat minInteval;   //更新间隔
+@property (nonatomic, assign) id<GGLBSManagerDelegate>lbsDelegate;
 
+@end
+
+
+
+@protocol GGLBSManagerDelegate <NSObject>
+
+- (void)didUpdateLocation:(CLLocation *)location;
 
 @end

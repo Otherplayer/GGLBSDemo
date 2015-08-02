@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		638D92A31B6E21AF00E10FD9 /* GGAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 638D92A21B6E21AF00E10FD9 /* GGAnnotation.m */; };
+		638D92A71B6E264000E10FD9 /* MKMapView+MapViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 638D92A61B6E264000E10FD9 /* MKMapView+MapViewUtil.m */; };
 		63E634DC1B6B86E30090C707 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E634DB1B6B86E30090C707 /* main.m */; };
 		63E634DF1B6B86E30090C707 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E634DE1B6B86E30090C707 /* AppDelegate.m */; };
 		63E634E21B6B86E30090C707 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E634E11B6B86E30090C707 /* ViewController.m */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		638D92A11B6E21AF00E10FD9 /* GGAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGAnnotation.h; sourceTree = "<group>"; };
+		638D92A21B6E21AF00E10FD9 /* GGAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGAnnotation.m; sourceTree = "<group>"; };
+		638D92A51B6E264000E10FD9 /* MKMapView+MapViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+MapViewUtil.h"; sourceTree = "<group>"; };
+		638D92A61B6E264000E10FD9 /* MKMapView+MapViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+MapViewUtil.m"; sourceTree = "<group>"; };
 		63E634D71B6B86E30090C707 /* GGLBSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGLBSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E634DB1B6B86E30090C707 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63E634DD1B6B86E30090C707 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		638D92A41B6E25F000E10FD9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				638D92A51B6E264000E10FD9 /* MKMapView+MapViewUtil.h */,
+				638D92A61B6E264000E10FD9 /* MKMapView+MapViewUtil.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		63E634CE1B6B86E30090C707 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +125,7 @@
 		63E634D91B6B86E30090C707 /* GGLBSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				638D92A41B6E25F000E10FD9 /* Categories */,
 				63E6350D1B6B87FE0090C707 /* LBSManager */,
 				63E634DD1B6B86E30090C707 /* AppDelegate.h */,
 				63E634DE1B6B86E30090C707 /* AppDelegate.m */,
@@ -157,6 +173,8 @@
 			children = (
 				63E635151B6B89150090C707 /* GGLBSManager.h */,
 				63E635161B6B89150090C707 /* GGLBSManager.m */,
+				638D92A11B6E21AF00E10FD9 /* GGAnnotation.h */,
+				638D92A21B6E21AF00E10FD9 /* GGAnnotation.m */,
 			);
 			name = LBSManager;
 			sourceTree = "<group>";
@@ -296,8 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638D92A31B6E21AF00E10FD9 /* GGAnnotation.m in Sources */,
 				63E634E21B6B86E30090C707 /* ViewController.m in Sources */,
 				63E634DF1B6B86E30090C707 /* AppDelegate.m in Sources */,
+				638D92A71B6E264000E10FD9 /* MKMapView+MapViewUtil.m in Sources */,
 				63E634DC1B6B86E30090C707 /* main.m in Sources */,
 				63E635171B6B89150090C707 /* GGLBSManager.m in Sources */,
 			);

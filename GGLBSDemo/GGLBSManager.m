@@ -6,6 +6,10 @@
 //  Copyright © 2015年 __无邪_. All rights reserved.
 //
 
+//NSLocationWhenInUseUsageDescription
+//NSLocationAlwaysUsageDescription
+
+
 #import "GGLBSManager.h"
 
 @implementation GGLBSManager
@@ -38,9 +42,13 @@
         }
         
         
-        self.minSpeed = 3;
-        self.minFilter = 50;
-        self.minInteval = 10;
+//        self.minSpeed = 3;
+//        self.minFilter = 50;
+//        self.minInteval = 10;
+        
+        self.minSpeed = 0.5;
+        self.minFilter = 5;
+        self.minInteval = 5;
         
         self.delegate = self;
         self.distanceFilter  = self.minFilter;
@@ -102,6 +110,10 @@
 - (void)uploadLocation:(CLLocation*)location
 {
     NSLog(@"uploadLocation");
+    
+    if (_lbsDelegate && [_lbsDelegate respondsToSelector:@selector(didUpdateLocation:)]) {
+        [_lbsDelegate didUpdateLocation:location];
+    }
     
 //    MMLoc *loc = [MMLoc new];
 //    loc.date       = [NSDate date];
