@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GGLBSManager.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,35 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]) {
+        
+        NSLog(@"");
+//        MMLoc *loc = [MMLoc new];
+//        loc.date       = [NSDate date];
+//        loc.background = ([UIApplication sharedApplication].applicationState != UIApplicationStateActive);
+//        loc.loc        = [NSString stringWithFormat:@"wake up after killed"];
+//        
+//        RLMRealm *realm = [RLMRealm defaultRealm];
+//        
+//        [realm transactionWithBlock:^{
+//            [realm addObject:loc];
+//        }];
+//        
+        if ( [[GGLBSManager sharedManager] respondsToSelector:@selector(requestAlwaysAuthorization)] ){
+            [[GGLBSManager sharedManager] requestAlwaysAuthorization];
+        }
+        
+        if ( [self respondsToSelector:@selector(allowsBackgroundLocationUpdates)]){
+            [GGLBSManager sharedManager].allowsBackgroundLocationUpdates = YES;
+        }
+        
+        [[GGLBSManager sharedManager] startUpdatingLocation];
+        
+        
+    }
+    
     return YES;
 }
 

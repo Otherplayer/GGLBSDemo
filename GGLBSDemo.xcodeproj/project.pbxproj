@@ -15,6 +15,9 @@
 		63E634EA1B6B86E30090C707 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E634E81B6B86E30090C707 /* LaunchScreen.storyboard */; };
 		63E634F51B6B86E30090C707 /* GGLBSDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E634F41B6B86E30090C707 /* GGLBSDemoTests.m */; };
 		63E635001B6B86E30090C707 /* GGLBSDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E634FF1B6B86E30090C707 /* GGLBSDemoUITests.m */; };
+		63E635121B6B88CA0090C707 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E635111B6B88CA0090C707 /* MapKit.framework */; };
+		63E635141B6B88D10090C707 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E635131B6B88D10090C707 /* CoreLocation.framework */; };
+		63E635171B6B89150090C707 /* GGLBSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E635161B6B89150090C707 /* GGLBSManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		63E634FB1B6B86E30090C707 /* GGLBSDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GGLBSDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E634FF1B6B86E30090C707 /* GGLBSDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGLBSDemoUITests.m; sourceTree = "<group>"; };
 		63E635011B6B86E30090C707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E635111B6B88CA0090C707 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		63E635131B6B88D10090C707 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		63E635151B6B89150090C707 /* GGLBSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGLBSManager.h; sourceTree = "<group>"; };
+		63E635161B6B89150090C707 /* GGLBSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGLBSManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E635141B6B88D10090C707 /* CoreLocation.framework in Frameworks */,
+				63E635121B6B88CA0090C707 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +110,7 @@
 		63E634D91B6B86E30090C707 /* GGLBSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				63E6350D1B6B87FE0090C707 /* LBSManager */,
 				63E634DD1B6B86E30090C707 /* AppDelegate.h */,
 				63E634DE1B6B86E30090C707 /* AppDelegate.m */,
 				63E634E01B6B86E30090C707 /* ViewController.h */,
@@ -117,6 +127,8 @@
 		63E634DA1B6B86E30090C707 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63E635131B6B88D10090C707 /* CoreLocation.framework */,
+				63E635111B6B88CA0090C707 /* MapKit.framework */,
 				63E634DB1B6B86E30090C707 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +150,15 @@
 				63E635011B6B86E30090C707 /* Info.plist */,
 			);
 			path = GGLBSDemoUITests;
+			sourceTree = "<group>";
+		};
+		63E6350D1B6B87FE0090C707 /* LBSManager */ = {
+			isa = PBXGroup;
+			children = (
+				63E635151B6B89150090C707 /* GGLBSManager.h */,
+				63E635161B6B89150090C707 /* GGLBSManager.m */,
+			);
+			name = LBSManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +228,11 @@
 				TargetAttributes = {
 					63E634D61B6B86E30090C707 = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					63E634EF1B6B86E30090C707 = {
 						CreatedOnToolsVersion = 7.0;
@@ -273,6 +299,7 @@
 				63E634E21B6B86E30090C707 /* ViewController.m in Sources */,
 				63E634DF1B6B86E30090C707 /* AppDelegate.m in Sources */,
 				63E634DC1B6B86E30090C707 /* main.m in Sources */,
+				63E635171B6B89150090C707 /* GGLBSManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GGLBSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = otherplayer.GGLBSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GGLBSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = otherplayer.GGLBSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +527,7 @@
 				63E635061B6B86E30090C707 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63E635071B6B86E30090C707 /* Build configuration list for PBXNativeTarget "GGLBSDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +536,7 @@
 				63E635091B6B86E30090C707 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63E6350A1B6B86E30090C707 /* Build configuration list for PBXNativeTarget "GGLBSDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +545,7 @@
 				63E6350C1B6B86E30090C707 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
